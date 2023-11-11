@@ -1,14 +1,31 @@
-import { List, Datagrid, TextField } from "react-admin";
+import {
+  List,
+  Datagrid,
+  TextField,
+  TopToolbar,
+  FilterButton,
+  TextInput,
+} from "react-admin";
+
+const albumsFilters = [<TextInput label="UserId" source="userId" />];
+
+const PostListActions = () => (
+  <TopToolbar>
+    <FilterButton />
+  </TopToolbar>
+);
 
 const AlbumList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} actions={<PostListActions />} filters={albumsFilters}>
       <Datagrid
         rowClick={(id) => {
           return `/albums/${id}/photos`;
         }}
       >
-        <TextField source="title" />
+        <TextField source="userId" label="User id" />
+        <TextField source="id" label="Album id" />
+        <TextField source="title" label="Album title" />
       </Datagrid>
     </List>
   );
