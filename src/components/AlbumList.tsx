@@ -15,9 +15,9 @@ const PostListActions = () => (
   </TopToolbar>
 );
 
-const AlbumList = (props) => {
+const AlbumList = () => {
   return (
-    <List {...props} actions={<PostListActions />} filters={albumsFilters}>
+    <List actions={<PostListActions />} filters={albumsFilters}>
       <Datagrid
         rowClick={(id) => {
           return `/albums/${id}/photos`;
