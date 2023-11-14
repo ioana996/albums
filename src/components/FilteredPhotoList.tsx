@@ -14,7 +14,7 @@ const FilteredPhotoList = () => {
     <ImageList cols={4}>
       {data.map((item) => (
         <ImageListItem key={item.id}>
-          <img src={item.thumbnailUrl}></img>{" "}
+          <img src={item.thumbnailUrl}></img>
         </ImageListItem>
       ))}
     </ImageList>

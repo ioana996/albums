@@ -5,6 +5,8 @@ import {
   TopToolbar,
   FilterButton,
   TextInput,
+  FunctionField,
+  NumberField,
 } from "react-admin";
 
 const albumsFilters = [<TextInput label="UserId" source="userId" />];
@@ -23,9 +25,9 @@ const AlbumList = () => {
           return `/albums/${id}/photos`;
         }}
       >
-        <TextField source="userId" label="User id" />
-        <TextField source="id" label="Album id" />
-        <TextField source="title" label="Album title" />
+        <NumberField source="userId" label="User id" />
+        <NumberField source="id" label="Album id" />
+        <TextField source="title" label="Album title" />;
       </Datagrid>
     </List>
   );
